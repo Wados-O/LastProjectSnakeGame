@@ -43,5 +43,4 @@ public class SnakeFood {
       return y;
     }
   }
-
 }
