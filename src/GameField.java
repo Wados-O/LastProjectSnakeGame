@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.jar.JarEntry;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -61,6 +62,15 @@ public void initGame(){
     int barrierY = new Random().nextInt(20) * DOT_SIZE;
     barriers.add(new Point(barrierX, barrierY));
 
+  }
+
+  public void loadImages() {
+    ImageIcon iia = new ImageIcon("apple.png");
+    apple = iia.getImage();
+    ImageIcon iid = new ImageIcon("dot.png");
+    dot = iid.getImage();
+    ImageIcon iib = new ImageIcon("barrier.png");
+    barrier = iib.getImage();
   }
 
   @Override
