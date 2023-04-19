@@ -114,6 +114,48 @@ public void initGame(){
       createBarrier();
     }
   }
+
+  public void checkApple() {
+    if (x[0] == appleX && y[0] == appleY) {
+      dots++;
+      createApple();
+    }
+
+  }
+
+  public void checkBarrier() {
+    for (Point barrier : barriers) {
+      if (x[0] == barrier.getX() && y[0] == barrier.getY()) {
+        inGame = false;
+        break;
+      }
+    }
+  }
+
+  public void checkCollisions() {
+    for (int i = dots; i > 0; i--) {
+      if (i > 4 && x[0] == x[i] && y[0] == y[i]) {
+        inGame = false;
+      }
+    }
+
+    if (x[0] > SIZE) {
+      inGame = false;
+    }
+    if (x[0] < 0) {
+      inGame = false;
+    }
+    if (y[0] > SIZE) {
+      inGame = false;
+    }
+    if (y[0] < 0) {
+      inGame = false;
+    }
+    // Проверка на столкновение с барьером
+    if (x[0] == barrierX && y[0] == barrierY) {
+      inGame = false;
+    }
+  }
   @Override
   public void actionPerformed(ActionEvent e) {
 
