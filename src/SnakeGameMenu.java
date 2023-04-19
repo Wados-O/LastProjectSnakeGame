@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class SnakeGameMenu extends JPanel {
@@ -20,9 +21,13 @@ public class SnakeGameMenu extends JPanel {
     buttonPanel.add(startButton);
     buttonPanel.add(exitButton);
     add(buttonPanel, BorderLayout.CENTER);
+    startButton.addActionListener(e -> {
 
 
-
+    });
+    exitButton.addActionListener(e -> {
+      System.exit(0);
+    });
   }
 
 
@@ -31,12 +36,12 @@ public class SnakeGameMenu extends JPanel {
 
 
 
-
-
-
   public static void main(String[] args) {
-    System.out.println("Hello world!");
-
-
+    JFrame frame = new JFrame("Snake Game");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setSize(600, 630);
+    frame.setLocationRelativeTo(null);
+    frame.setContentPane(new SnakeGameMenu());
+    frame.setVisible(true);
   }
 }
