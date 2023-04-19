@@ -37,7 +37,20 @@ public class GameField extends JPanel implements ActionListener {
     loadimage();
   }
 
+public void initGame(){
+  Barrier barrier = new Barrier();
+  add(barrier);
+  dots = 3;
+  for (int i = 0; i < dots; i++) {
+    x[i] = 48 - i * DOT_SIZE;
+    y[i] = 48;
+  }
+  timer = new Timer(250, this);
+  timer.start();
+  createApple();
+  createBarrier();
 
+}
 
   @Override
   public void actionPerformed(ActionEvent e) {
