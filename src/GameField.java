@@ -158,6 +158,14 @@ public void initGame(){
   }
   @Override
   public void actionPerformed(ActionEvent e) {
+    if (inGame) {
+      checkApple();
+      checkBarrier();
+      checkCollisions();
+      move();
 
+    }
+    repaint();
   }
+
 }
