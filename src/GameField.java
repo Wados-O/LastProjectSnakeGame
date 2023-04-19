@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -72,7 +73,25 @@ public void initGame(){
     ImageIcon iib = new ImageIcon("barrier.png");
     barrier = iib.getImage();
   }
+  @Override
+  protected void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    if (inGame) {
+      g.drawImage(apple, appleX, appleY, this);
+      for (Point barrier : barriers) {
+        g.drawImage(this.barrier, (int) barrier.getX(), (int) barrier.getY(), this);
+      }
+      for (int i = 0; i < dots; i++) {
+        g.drawImage(dot, x[i], y[i], this);
+      }
+    } else {
+      String str = "Game Over";
+      g.setColor(Color.white);
+      g.drawString(str, 255, SIZE / 2);
 
+
+    }
+  }
   @Override
   public void actionPerformed(ActionEvent e) {
 
