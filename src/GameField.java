@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.jar.JarEntry;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -51,6 +52,16 @@ public void initGame(){
   createBarrier();
 
 }
+  public void createApple() {
+    appleX = new Random().nextInt(20) * DOT_SIZE;
+    appleY = new Random().nextInt(20) * DOT_SIZE;
+  }
+  public void createBarrier() {
+    int barrierX = new Random().nextInt(20) * DOT_SIZE;
+    int barrierY = new Random().nextInt(20) * DOT_SIZE;
+    barriers.add(new Point(barrierX, barrierY));
+
+  }
 
   @Override
   public void actionPerformed(ActionEvent e) {
