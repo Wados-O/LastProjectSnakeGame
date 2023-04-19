@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -33,5 +34,9 @@ public class Barrier extends JPanel {
         null);
 
 
+  }
+  @Override
+  public Dimension getPreferredSize() {
+    return new Dimension(590, 590); // Установка предпочтительного размера панели
   }
 }
