@@ -37,7 +37,7 @@ public class GameField extends JPanel implements ActionListener {
 
   public GameField(){
     setBackground(Color.BLACK);
-    loadimage();
+    loadImages();
   }
 
 public void initGame(){
@@ -90,6 +90,28 @@ public void initGame(){
       g.drawString(str, 255, SIZE / 2);
 
 
+    }
+  } public void move() {
+    for (int i = dots; i > 0; i--) {
+      x[i] = x[i - 1];
+      y[i] = y[i - 1];
+    }
+    if (left) {
+      x[0] -= DOT_SIZE;
+    }
+    if (right) {
+      x[0] += DOT_SIZE;
+    }
+    if (up) {
+      y[0] -= DOT_SIZE;
+    }
+    if (down) {
+      y[0] += DOT_SIZE;
+    }
+    if (x[0] == appleX && y[0] == appleY) {
+      dots++;
+      createApple();
+      createBarrier();
     }
   }
   @Override
