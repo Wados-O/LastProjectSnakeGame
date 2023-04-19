@@ -40,6 +40,10 @@ public class GameField extends JPanel implements ActionListener {
   public GameField(){
     setBackground(Color.BLACK);
     loadImages();
+    initGame();
+
+    addKeyListener(new FieldKeyListener());
+    setFocusable(true);
   }
 
 public void initGame(){
