@@ -24,6 +24,12 @@ public class GameField extends JPanel implements ActionListener {
   private int barrierX;
   private int barrierY;
   private Image apple;
+  private Image banana;
+  private Image grape;
+  private int bananaX;
+  private int bananaY;
+  private int grapeX;
+  private int grapeY;
   private int appleX;
   private int appleY;
   private int[] x = new int[ALL_DOTS];
@@ -37,6 +43,7 @@ public class GameField extends JPanel implements ActionListener {
   private boolean up = false;
   private boolean down = false;
   private boolean inGame = true;
+  private int score = 0;
 
   private final Sound gameOverSound = new Sound();
 
@@ -66,11 +73,21 @@ public void initGame(){
   timer.start();
   createApple();
   createBarrier();
-
+  createBanana();
+  createGrape();
 }
   public void createApple() {
     appleX = new Random().nextInt(20) * DOT_SIZE;
     appleY = new Random().nextInt(20) * DOT_SIZE;
+  }
+  public void createBanana() {
+    bananaX = new Random().nextInt(20) * DOT_SIZE;
+    bananaY = new Random().nextInt(20) * DOT_SIZE;
+  }
+
+  public void createGrape() {
+    grapeX = new Random().nextInt(20) * DOT_SIZE;
+    grapeY = new Random().nextInt(20) * DOT_SIZE;
   }
   public void createBarrier() {
     int barrierX = new Random().nextInt(20) * DOT_SIZE;
@@ -84,14 +101,20 @@ public void initGame(){
     apple = iia.getImage();
     ImageIcon iid = new ImageIcon("dot.png");
     dot = iid.getImage();
-    ImageIcon iib = new ImageIcon("barrier.png");
+    ImageIcon iib = new ImageIcon("boom.png");
     barrier = iib.getImage();
+    ImageIcon iic = new ImageIcon("banana.png");
+    banana = iic.getImage();
+    ImageIcon iig = new ImageIcon("grape.png");
+    grape = iig.getImage();
   }
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
     if (inGame) {
       g.drawImage(apple, appleX, appleY, this);
+      g.drawImage(banana, bananaX, bananaY, this);
+      g.drawImage(grape, grapeX, grapeY, this);
       for (Point barrier : barriers) {
         g.drawImage(this.barrier, (int) barrier.getX(), (int) barrier.getY(), this);
       }
@@ -100,9 +123,11 @@ public void initGame(){
       }
     } else {
       String str = "Game Over";
+      String str2 = "Score: " + score;
       g.setColor(Color.white);
       setFont(new Font("Terminator Two", Font.BOLD, 36));
       g.drawString(str, 180, SIZE / 2);
+      g.drawString("Score: " + score, SIZE / 2 - 30, SIZE / 2 + 20);
 
 
     }
