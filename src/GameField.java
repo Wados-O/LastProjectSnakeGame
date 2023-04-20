@@ -58,8 +58,7 @@ public class GameField extends JPanel implements ActionListener {
   }
 
   public void initGame() {
-    Barrier barrier = new Barrier();
-    add(barrier);
+
     dots = 3;
     for (int i = 0; i < dots; i++) {
       x[i] = 48 - i * DOT_SIZE;
