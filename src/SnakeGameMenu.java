@@ -6,7 +6,7 @@ public class SnakeGameMenu extends JPanel {
   public SnakeGameMenu() {
 
     setLayout(new BorderLayout());
-    setBackground(Color.BLACK);
+    setBackground(Color.black);
 
     // Создание кнопок для главного меню
     JButton startButton = new JButton("START");
