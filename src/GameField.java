@@ -128,7 +128,7 @@ public class GameField extends JPanel implements ActionListener {
       g.setColor(Color.white);
       setFont(new Font("Terminator Two", Font.BOLD, 36));
       g.drawString(str, 180, SIZE / 2);
-      g.drawString("Score: " + score, SIZE / 2 - 30, SIZE / 2 + 20);
+      g.drawString("Score: " + score, SIZE / 2 - 100, SIZE / 2 + 50);
 
 
     }
@@ -153,18 +153,19 @@ public class GameField extends JPanel implements ActionListener {
     }
     if (x[0] == appleX && y[0] == appleY) {
       dots++;
+      score += 20;
       createApple();
       createBarrier();
       score++;
     }
     if (x[0] == bananaX && y[0] == bananaY) {
       dots++;
-      score += 2;
+      score += 5;
       createBanana();
     }
     if (x[0] == grapeX && y[0] == grapeY) {
       dots++;
-      score += 3;
+      score += 10;
       createGrape();
     }
   }
