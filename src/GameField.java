@@ -162,11 +162,13 @@ public class GameField extends JPanel implements ActionListener {
       dots++;
       score += 5;
       createBanana();
+      createBarrier();
     }
     if (x[0] == grapeX && y[0] == grapeY) {
       dots++;
       score += 10;
       createGrape();
+      createBarrier();
     }
   }
 
