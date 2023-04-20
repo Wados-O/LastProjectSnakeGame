@@ -62,8 +62,8 @@
 **Шаг 10:Создать главное меню с возможностью выхода из игры и просмотра счета игры ..[Eugen](https://www.instagram.com/borodin_ne_oficial/)**
 
 ## Авторы: 
-Mejinschii Vadim;
-Borodin Eugen;
-Shvidchenko Artem;
-Mandaji Dmitriy; 
-Aerian Arut
+## Mejinschii Vadim;
+## Borodin Eugen;
+## Shvidchenko Artem;
+## Mandaji Dmitriy; 
+## Aerian Arut
