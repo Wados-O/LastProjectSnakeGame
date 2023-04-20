@@ -29,6 +29,13 @@ public class SnakeGameMenu extends JPanel {
     startButton.addActionListener(e -> {
       // Создание игрового поля и добавление его на панель
       GameField gameField = new GameField();
+      Sound startGameSound = new Sound();
+      try {
+        startGameSound.load("Sounds/csgo.wav");
+      } catch (Exception ex) {
+        throw new RuntimeException(ex);
+      }
+      startGameSound.play();
       JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
       parentFrame.getContentPane().removeAll();
       parentFrame.getContentPane().add(gameField);
