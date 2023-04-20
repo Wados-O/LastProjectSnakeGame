@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
@@ -43,7 +44,7 @@ public class GameField extends JPanel implements ActionListener {
     try {
       gameOverSound.load("Sounds/gameover.wav");
     } catch (Exception e) {
-      System.err.println("zvyk");
+      System.err.println("audio error");
     }
     setBackground(Color.BLACK);
     loadImages();
@@ -100,7 +101,8 @@ public void initGame(){
     } else {
       String str = "Game Over";
       g.setColor(Color.white);
-      g.drawString(str, 255, SIZE / 2);
+      setFont(new Font("Terminator Two", Font.BOLD, 36));
+      g.drawString(str, 180, SIZE / 2);
 
 
     }
