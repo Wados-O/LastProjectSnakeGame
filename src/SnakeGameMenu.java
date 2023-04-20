@@ -31,7 +31,7 @@ public class SnakeGameMenu extends JPanel {
       GameField gameField = new GameField();
       Sound startGameSound = new Sound();
       try {
-        startGameSound.load("Sounds/СsGo.wav");
+        startGameSound.load("Sounds/csgo.wav");
       } catch (Exception ex) {
         throw new RuntimeException(ex);
       }
