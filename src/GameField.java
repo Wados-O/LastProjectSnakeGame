@@ -120,9 +120,9 @@ public class GameField extends JPanel implements ActionListener {
       for (int i = 0; i < dots; i++) {
         g.drawImage(dot, x[i], y[i], this);
       }
-      g.setColor(Color.black);
-      g.setFont(new Font("Arial", Font.BOLD, 16));
-      g.drawString("Score: " + score, SIZE - 80, 20);
+      g.setColor(Color.white);
+      g.setFont(new Font("Terminator Two", Font.BOLD, 16));
+      g.drawString("Score: " + score, SIZE - 120, 20);
     } else {
       String str = "Game Over";
       g.setColor(Color.white);
