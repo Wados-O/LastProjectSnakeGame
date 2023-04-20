@@ -9,9 +9,10 @@ public class SnakeGameMenu extends JPanel {
     setBackground(Color.BLACK);
 
     // Создание кнопок для главного меню
-    JButton startButton = new JButton("Start");
-    JButton exitButton = new JButton("Exit");
-
+    JButton startButton = new JButton("START");
+    startButton.setFont(new Font("Terminator Two", Font.PLAIN, 28));
+    JButton exitButton = new JButton("EXIT");
+    exitButton.setFont(new Font("Terminator Two", Font.PLAIN,28));
     // Добавление кнопок на панель
     JPanel buttonPanel = new JPanel();
     buttonPanel.setLayout(new GridLayout(2, 1));
