@@ -31,6 +31,9 @@ public class GameField extends JPanel implements ActionListener {
   private final int[] y = new int[ALL_DOTS];
   private int dots;
   private Timer timer;
+  private int headX;
+  private int headY;
+  private Image head;
 
   private final ArrayList<Point> barriers = new ArrayList<Point>();
   private boolean left = false;
@@ -59,7 +62,6 @@ public class GameField extends JPanel implements ActionListener {
   }
 
   public void initGame() {
-
     dots = 3;
     for (int i = 0; i < dots; i++) {
       x[i] = 48 - i * DOT_SIZE;
@@ -71,8 +73,15 @@ public class GameField extends JPanel implements ActionListener {
     createBarrier();
     createBanana();
     createGrape();
+    createHead();
   }
 
+
+
+  public void createHead() {
+    headX = x[0];
+    headY = y[0];
+  }
   public void createApple() {
     appleX = new Random().nextInt(20) * DOT_SIZE;
     appleY = new Random().nextInt(20) * DOT_SIZE;
@@ -96,6 +105,8 @@ public class GameField extends JPanel implements ActionListener {
   }
 
   public void loadImages() {
+    ImageIcon iih = new ImageIcon("head.png");
+    head = iih.getImage();
     ImageIcon iia = new ImageIcon("apple.png");
     apple = iia.getImage();
     ImageIcon iid = new ImageIcon("dot.png");
@@ -119,7 +130,11 @@ public class GameField extends JPanel implements ActionListener {
         g.drawImage(this.barrier, (int) barrier.getX(), (int) barrier.getY(), this);
       }
       for (int i = 0; i < dots; i++) {
-        g.drawImage(dot, x[i], y[i], this);
+        if (i == 0){
+          g.drawImage(head,headX,headY,this);
+        } else {
+          g.drawImage(dot, x[i], y[i], this);
+        }
       }
       g.setColor(Color.white);
       g.setFont(new Font("Terminator Two", Font.BOLD, 16));
@@ -142,15 +157,23 @@ public class GameField extends JPanel implements ActionListener {
     }
     if (left) {
       x[0] -= DOT_SIZE;
+      headX =x[0];
+      head = new ImageIcon("head.png").getImage();
     }
     if (right) {
       x[0] += DOT_SIZE;
+      headX = x[0];
+      head = new ImageIcon("head.png").getImage();
     }
     if (up) {
       y[0] -= DOT_SIZE;
+      headY = y[0];
+      head = new ImageIcon("head.png").getImage();
     }
     if (down) {
       y[0] += DOT_SIZE;
+      headY = y[0];
+      head = new ImageIcon("head.png").getImage();
     }
     if (x[0] == appleX && y[0] == appleY) {
       dots++;
