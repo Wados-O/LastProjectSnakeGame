@@ -21,7 +21,7 @@ public class SnakeGameMenu extends JPanel {
     add(buttonPanel, BorderLayout.CENTER);
 
     // Добавление заголовка на панель
-    JLabel titleLabel = new JLabel("<<Snake Game >>", JLabel.CENTER);
+    JLabel titleLabel = new JLabel("*** Snake Game ***", JLabel.CENTER);
     titleLabel.setFont(new Font("Terminator Two", Font.BOLD, 30));
     titleLabel.setForeground(Color.WHITE);
     add(titleLabel, BorderLayout.NORTH);
