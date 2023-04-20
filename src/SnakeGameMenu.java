@@ -46,8 +46,11 @@ public class SnakeGameMenu extends JPanel {
   }
 
   // Метод для запуска главного меню
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     JFrame frame = new JFrame("Snake Game");
+    Sound startMenuSound = new Sound();
+    startMenuSound.load("Sounds/xpStart.wav");
+    startMenuSound.play();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(600, 630);
     frame.setLocationRelativeTo(null);

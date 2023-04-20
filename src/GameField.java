@@ -37,7 +37,14 @@ public class GameField extends JPanel implements ActionListener {
   private boolean down = false;
   private boolean inGame = true;
 
+  private final Sound gameOverSound = new Sound();
+
   public GameField(){
+    try {
+      gameOverSound.load("Sounds/gameover.wav");
+    } catch (Exception e) {
+      System.err.println("zvyk");
+    }
     setBackground(Color.BLACK);
     loadImages();
     initGame();
@@ -168,6 +175,9 @@ public void initGame(){
       checkApple();
       checkBarrier();
       checkCollisions();
+      if (!inGame) {
+        gameOverSound.play();
+      }
       move();
 
     }
