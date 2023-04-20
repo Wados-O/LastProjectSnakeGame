@@ -41,10 +41,11 @@ public class GameField extends JPanel implements ActionListener {
   private int score = 0;
 
   private final Sound gameOverSound = new Sound();
-
+  private final Sound fruitSound = new Sound();
   public GameField() {
     try {
       gameOverSound.load("Sounds/gameover.wav");
+      fruitSound.load("Sounds/fruitSound.wav");
     } catch (Exception e) {
       System.err.println("audio error");
     }
@@ -156,6 +157,7 @@ public class GameField extends JPanel implements ActionListener {
       score += 20;
       createApple();
       createBarrier();
+      fruitSound.play();
       score++;
     }
     if (x[0] == bananaX && y[0] == bananaY) {
@@ -163,12 +165,14 @@ public class GameField extends JPanel implements ActionListener {
       score += 5;
       createBanana();
       createBarrier();
+      fruitSound.play();
     }
     if (x[0] == grapeX && y[0] == grapeY) {
       dots++;
       score += 10;
       createGrape();
       createBarrier();
+      fruitSound.play();
     }
   }
 
