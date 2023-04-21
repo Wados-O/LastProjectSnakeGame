@@ -48,9 +48,7 @@ public class SnakeGameMenu extends JPanel {
       gameField.setVisible(true);
     });
 
-    exitButton.addActionListener(e -> {
-      System.exit(0);
-    });
+    exitButton.addActionListener(e -> System.exit(0));
   }
 
   // Метод для запуска главного меню

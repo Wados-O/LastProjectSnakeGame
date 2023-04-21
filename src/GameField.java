@@ -14,8 +14,8 @@ public class GameField extends JPanel implements ActionListener {
   private final int DOT_SIZE = 16;
   private final int ALL_DOTS = 600;
 
-  private Image dot;
   private Image barrier;
+  private Image dot;
   private int barrierX;
   private int barrierY;
   private Image apple;
@@ -25,17 +25,16 @@ public class GameField extends JPanel implements ActionListener {
   private int bananaY;
   private int grapeX;
   private int grapeY;
-  private int appleX;
+  int appleX;
   private int appleY;
   private final int[] x = new int[ALL_DOTS];
   private final int[] y = new int[ALL_DOTS];
   private int dots;
-  private Timer timer;
-  private int headX;
+  int headX;
   private int headY;
   private Image head;
 
-  private final ArrayList<Point> barriers = new ArrayList<Point>();
+  private final ArrayList<Point> barriers = new ArrayList<>();
   private boolean left = false;
   private boolean right = true;
   private boolean up = false;
@@ -47,7 +46,7 @@ public class GameField extends JPanel implements ActionListener {
   private final Sound fruitSound = new Sound();
   public GameField() {
     try {
-      gameOverSound.load("Sounds/gameover.wav");
+      gameOverSound.load("Sounds/game over.wav");
       fruitSound.load("Sounds/fruitSound.wav");
     } catch (Exception e) {
       System.err.println("audio error");
@@ -67,7 +66,7 @@ public class GameField extends JPanel implements ActionListener {
       x[i] = 48 - i * DOT_SIZE;
       y[i] = 48;
     }
-    timer = new Timer(300, this);
+    Timer timer = new Timer(300, this);
     timer.start();
     createApple();
     createBarrier();
