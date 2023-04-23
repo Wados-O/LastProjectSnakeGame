@@ -17,4 +17,8 @@ public class Sound {
     clip.setFramePosition(0);
     clip.start();
   }
+
+  public Clip getClip() {
+    return clip;
+  }
 }
