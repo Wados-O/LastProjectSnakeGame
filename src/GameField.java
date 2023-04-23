@@ -82,23 +82,23 @@ public class GameField extends JPanel implements ActionListener {
     headY = y[0];
   }
   public void createApple() {
-    appleX = new Random().nextInt(30) * DOT_SIZE;
-    appleY = new Random().nextInt(30) * DOT_SIZE;
+    appleX = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
+    appleY = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
   }
 
   public void createBanana() {
-    bananaX = new Random().nextInt(30) * DOT_SIZE;
-    bananaY = new Random().nextInt(30) * DOT_SIZE;
+    bananaX = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
+    bananaY = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
   }
 
   public void createGrape() {
-    grapeX = new Random().nextInt(30) * DOT_SIZE;
-    grapeY = new Random().nextInt(30) * DOT_SIZE;
+    grapeX = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
+    grapeY = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
   }
 
   public void createBarrier() {
-    int barrierX = new Random().nextInt(30) * DOT_SIZE;
-    int barrierY = new Random().nextInt(30) * DOT_SIZE;
+    int barrierX = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
+    int barrierY = new Random().nextInt(SIZE / DOT_SIZE) * DOT_SIZE;
     barriers.add(new Point(barrierX, barrierY));
 
   }
