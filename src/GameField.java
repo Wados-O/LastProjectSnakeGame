@@ -26,21 +26,21 @@ public class GameField extends JPanel implements ActionListener {
   private int grapeX;
   private int grapeY;
   int appleX;
-  private int appleY;
-  private final int[] x = new int[ALL_DOTS];
-  private final int[] y = new int[ALL_DOTS];
-  private int dots;
+  public int appleY;
+  public int[] x = new int[ALL_DOTS];
+  public int[] y = new int[ALL_DOTS];
+  public int dots;
   int headX;
-  private int headY;
-  private Image head;
+  public int headY;
+  public Image head;
 
-  private final ArrayList<Point> barriers = new ArrayList<>();
-  private boolean left = false;
-  private boolean right = true;
-  private boolean up = false;
-  private boolean down = false;
-  private boolean inGame = true;
-  private int score = 0;
+  public final ArrayList<Point> barriers = new ArrayList<>();
+  public boolean left = false;
+  public boolean right = true;
+  public boolean up = false;
+  public boolean down = false;
+  public boolean inGame = true;
+  public int score = 0;
 
   private final Sound gameOverSound = new Sound();
   private final Sound fruitSound = new Sound();
