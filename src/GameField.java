@@ -14,13 +14,13 @@ public class GameField extends JPanel implements ActionListener {
   private final int DOT_SIZE = 16;
   private final int ALL_DOTS = 600;
 
-  private Image barrier;
-  private Image dot;
+  public Image barrier;
+  public Image dot;
   private int barrierX;
   private int barrierY;
-  private Image apple;
-  private Image banana;
-  private Image grape;
+  public Image apple;
+  public Image banana;
+  public Image grape;
   private int bananaX;
   private int bananaY;
   private int grapeX;
